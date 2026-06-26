@@ -3,110 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YKI Svenska — Прогресс</title>
+<title>YKI Svenska — Готовность</title>
 <style>
   :root{
     --bg:#eef2f8; --card:#ffffff; --ink:#16233a; --muted:#6c7891;
-    --line:#e6ebf3; --blue:#0f63b8; --blue-d:#0b4d91; --gold:#f3b307;
-    --new:#aeb6c4; --learn:#e8941a; --review:#2f7fd4; --master:#1f9d6b;
+    --line:#e6ebf3; --gold:#f3b307; --green:#1f9d6b; --green-d:#178057;
+    --red:#e5716a; --red-bg:#f6dad4; --amber:#e8941a;
     --shadow:0 6px 22px rgba(22,35,58,.07); --r:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
-    background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.45}
-  .app{max-width:1020px;margin:0 auto;padding:28px 20px 60px}
+    background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+  .app{max-width:980px;margin:0 auto;padding:28px 20px 60px}
   header.top{display:flex;justify-content:space-between;align-items:flex-end;
     margin-bottom:22px;flex-wrap:wrap;gap:8px}
   header.top h1{font-size:20px;font-weight:700;letter-spacing:-.2px}
   header.top .sub{color:var(--muted);font-size:13px}
-  .pill{font-size:12px;font-weight:600;color:var(--blue-d);background:#e8f0fb;
-    padding:5px 11px;border-radius:999px}
+  .pill{font-size:12px;font-weight:600;color:#0b4d91;background:#e8f0fb;padding:5px 11px;border-radius:999px}
 
   .grid{display:grid;gap:16px}
-  .row-hero{grid-template-columns:1.1fr 1fr 1fr}
+  .row-hero{grid-template-columns:1.5fr 1fr}
   .row-two{grid-template-columns:1fr 1fr}
   @media(max-width:760px){.row-hero,.row-two{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
     padding:18px 20px;box-shadow:var(--shadow)}
-  .card h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+  .card h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
     color:var(--muted);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
-  .card h2 .count{font-size:12px;color:var(--ink);background:var(--bg);padding:3px 9px;border-radius:8px}
+  .card h2 .agg{font-size:15px;color:var(--ink);font-weight:800}
 
-  .hero{display:flex;align-items:center;gap:18px}
-  .ring{width:128px;height:128px;border-radius:50%;flex:none;display:grid;place-items:center;
-    background:conic-gradient(var(--master) 0% var(--pct,50%), #e9eef5 0)}
-  .ring .hole{width:96px;height:96px;border-radius:50%;background:var(--card);
-    display:grid;place-items:center;text-align:center}
-  .ring .num{font-size:34px;font-weight:800;line-height:1}
-  .ring .lab{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-  .delta{font-size:14px;font-weight:700;color:var(--master)}
-  .delta.up{color:var(--master)} .delta.zero{color:var(--muted);font-weight:600}
-  .delta small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  /* hero readiness */
+  .ready{display:flex;align-items:center;gap:22px;margin-bottom:8px}
+  .big{font-size:46px;font-weight:800;line-height:1;letter-spacing:-1px}
+  .big small{font-size:18px;color:var(--muted);font-weight:700}
+  .ready .lab{font-size:13px;color:var(--muted);margin-top:3px}
+  .pillars{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .pillar{display:flex;align-items:center;gap:10px;font-size:13px}
+  .pillar .name{width:118px;color:var(--ink);font-weight:600}
+  .pillar .trk{flex:1;height:10px;background:var(--red-bg);border-radius:6px;overflow:hidden}
+  .pillar .trk i{display:block;height:100%;background:var(--green);border-radius:6px;transition:width .6s}
+  .pillar .pc{width:38px;text-align:right;font-weight:700;color:var(--muted)}
 
-  .streak{display:flex;align-items:center;gap:14px}
-  .flame{width:46px;height:46px;flex:none}
-  .streak .big{font-size:30px;font-weight:800}
-  .streak .big span{font-size:13px;color:var(--muted);font-weight:600}
+  .streak{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .flame{width:42px;height:42px;flex:none}
+  .streak .big2{font-size:28px;font-weight:800}
+  .streak .big2 span{font-size:13px;color:var(--muted);font-weight:600}
   .week{display:flex;gap:5px;margin-top:12px}
   .week i{width:100%;height:8px;border-radius:4px;background:var(--line)}
   .week i.on{background:var(--gold)}
+  .mlist{margin-top:8px}
+  .mlist li{list-style:none;display:flex;align-items:center;gap:10px;font-size:13px;margin-bottom:7px}
+  .mlist .box{width:18px;height:18px;border-radius:5px;border:2px solid var(--line);flex:none;display:grid;place-items:center}
+  .mlist .done .box{background:var(--green);border-color:var(--green)}
+  .mlist .done .box::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+  .mlist .done span{color:var(--muted);text-decoration:line-through}
 
-  .goal{font-size:14px}
-  .goal .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
-  .goal .v{font-weight:600;margin-bottom:10px}
-  .goal .v small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  /* topic bars */
+  .bar{display:flex;align-items:center;gap:10px;padding:5px 0}
+  .bar .name{flex:1;font-size:13.5px;color:var(--ink)}
+  .bar .arrow{width:16px;text-align:center;font-size:12px;font-weight:800;flex:none}
+  .bar .arrow.up{color:var(--green)} .bar .arrow.down{color:var(--red)} .bar .arrow.flat{color:transparent}
+  .bar .trk{width:150px;height:11px;background:var(--red-bg);border-radius:6px;overflow:hidden;flex:none}
+  .bar .trk i{display:block;height:100%;background:var(--green);border-radius:6px;transition:width .6s}
+  .bar .pc{width:42px;text-align:right;font-size:12.5px;font-weight:700;color:var(--muted);flex:none}
+  .bar.zero .trk i{background:var(--red);opacity:.55}
+  @media(max-width:560px){.bar .trk{width:96px}}
 
-  .pbar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:4px 0 14px}
-  .pbar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--review))}
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:999px;
-    border:1px solid var(--line);display:flex;align-items:center;gap:7px}
-  .chip .d{width:9px;height:9px;border-radius:50%}
-  .s-new .d{background:var(--new)} .s-learn .d{background:var(--learn)}
-  .s-review .d{background:var(--review)} .s-master .d{background:var(--master)}
-  .s-master{border-color:#cdeeds}
-
-  .err{margin-bottom:14px}
-  .err .top{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:6px}
-  .err .top .delta{font-size:12px}
-  .track{position:relative;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
-  .track .before{position:absolute;inset:0;background:#f0d6cf;width:var(--b,60%)}
-  .track .now{position:absolute;left:0;top:0;bottom:0;background:var(--master);width:var(--n,18%);border-radius:6px}
-  .errsum{display:flex;gap:18px;margin-top:6px;font-size:13px;color:var(--muted)}
-  .errsum b{color:var(--ink)}
-  .empty{color:var(--muted);font-size:13px;font-style:italic}
-
-  .spark{width:100%;height:90px;display:block}
-  .trend-num{font-size:13px;color:var(--muted)}
-
-  .ms{display:flex;flex-direction:column;gap:10px}
-  .ms li{list-style:none;display:flex;align-items:center;gap:11px;font-size:14px}
-  .ms .box{width:20px;height:20px;border-radius:6px;border:2px solid var(--line);flex:none;display:grid;place-items:center}
-  .ms .done .box{background:var(--master);border-color:var(--master)}
-  .ms .done .box::after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
-  .ms .done span{color:var(--muted);text-decoration:line-through}
-  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:26px}
+  /* delta */
+  .delta-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:560px){.delta-cols{grid-template-columns:1fr}}
+  .delta-sum{font-size:13px;margin-bottom:10px}
+  .delta-sum .up{color:var(--green);font-weight:700} .delta-sum .down{color:var(--red);font-weight:700}
+  .drow{display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-top:1px solid var(--line)}
+  .drow .nm{color:var(--ink)} .drow .mv{font-weight:700}
+  .drow .mv.up{color:var(--green)} .drow .mv.down{color:var(--red)}
+  .empty{color:var(--muted);font-size:12.5px;font-style:italic}
+  .legend{font-size:11.5px;color:var(--muted);margin-top:4px}
+  .legend .g{display:inline-block;width:10px;height:10px;background:var(--green);border-radius:3px;vertical-align:middle;margin-right:3px}
+  .legend .r{display:inline-block;width:10px;height:10px;background:var(--red-bg);border-radius:3px;vertical-align:middle;margin:0 3px 0 10px}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}
 </style>
 </head>
 <body>
 <div class="app">
   <header class="top">
     <div>
-      <h1>YKI Svenska — мой прогресс</h1>
+      <h1>YKI Svenska — готовность к экзамену</h1>
       <div class="sub">Экзамен: ≈ июнь 2027 · фокус: письмо + говорение</div>
     </div>
-    <div class="pill" id="upd">обновлено: —</div>
+    <div class="pill" id="upd">—</div>
   </header>
 
+  <!-- HERO -->
   <div class="grid row-hero">
     <div class="card">
-      <h2>Текущий уровень <span class="count" id="lvlCount">цель 3</span></h2>
-      <div class="hero">
-        <div class="ring" id="ring"><div class="hole"><div>
-          <div class="num" id="lvlNum">2.0</div>
-          <div class="lab">из 6</div>
-        </div></div></div>
-        <div class="delta" id="lvlDelta">—<small>появится после 1-й сессии</small></div>
+      <h2>Готовность <span class="agg" id="readyPct">—</span></h2>
+      <div class="ready">
+        <div>
+          <div class="big" id="readyBig">—<small>%</small></div>
+          <div class="lab">складывается из трёх опор ниже</div>
+        </div>
+      </div>
+      <div class="pillars" id="pillars"></div>
+      <div class="legend">
+        <span class="g"></span>освоено &nbsp; <span class="r"></span>осталось выучить
       </div>
     </div>
 
@@ -114,129 +113,117 @@
       <h2>Серия занятий</h2>
       <div class="streak">
         <svg class="flame" viewBox="0 0 24 24"><path fill="#f3b307" d="M12 2c.5 3-2 4.5-2 7a3 3 0 0 0 1 2.2C11 9 12.5 8 12.5 8S14 10 13 12c-.4.8 0 1.6.7 1.9C15 14 16 12.7 16 11c0-1 .3-1.4.3-1.4.7 1 1.2 2.3 1.2 3.7A5.5 5.5 0 0 1 7 13.3C7 9 11 7 12 2z"/></svg>
-        <div class="big" id="streakNum">0 <span>дней подряд</span></div>
+        <div class="big2" id="streakNum">0 <span>дней подряд</span></div>
       </div>
       <div class="week" id="week"></div>
-    </div>
-
-    <div class="card goal">
-      <h2>Цель</h2>
-      <div class="k">Сдать YKI</div>
-      <div class="v">Уровень 3<small>письмо и говорение — стабильная тройка</small></div>
-      <div class="k">Готовность</div>
-      <div class="v" id="ready">Фаза 0 · 0 / ~180</div>
+      <ul class="mlist" id="ms"></ul>
     </div>
   </div>
 
-  <div class="grid row-two" style="margin-top:16px">
-    <div class="card">
-      <h2>Темы <span class="count" id="thCount">0 / 10</span></h2>
-      <div class="pbar"><i id="thBar" style="width:0%"></i></div>
-      <div class="chips" id="themes"></div>
-    </div>
-    <div class="card">
-      <h2>Функции <span class="count" id="fnCount">0 / 12</span></h2>
-      <div class="pbar"><i id="fnBar" style="width:0%"></i></div>
-      <div class="chips" id="functions"></div>
-    </div>
-  </div>
-
-  <div class="grid row-two" style="margin-top:16px">
-    <div class="card">
-      <h2>Ошибки — снижение</h2>
-      <div id="errors"><div class="empty">Появится после первых сессий</div></div>
-      <div class="errsum" id="errSum"></div>
-    </div>
-    <div class="card">
-      <h2>Динамика уровня</h2>
-      <svg class="spark" id="spark" viewBox="0 0 320 90" preserveAspectRatio="none"></svg>
-      <div class="trend-num" id="trendTxt">первая точка появится после сессии 1</div>
-    </div>
-  </div>
-
+  <!-- PILLAR 1: GRAMMAR -->
   <div class="card" style="margin-top:16px">
-    <h2>Вехи</h2>
-    <ul class="ms" id="ms"></ul>
+    <h2>Опора 1 · Грамматические темы <span class="agg" id="gAgg">—</span></h2>
+    <div id="grammar"></div>
   </div>
 
-  <footer id="foot">YKI Svenska · личный трекер · данные обновляются после каждой сессии</footer>
+  <!-- PILLAR 2: CONSTRUCTIONS -->
+  <div class="card" style="margin-top:16px">
+    <h2>Опора 2 · Конструкции для эссе <span class="agg" id="cAgg">—</span></h2>
+    <div id="constructions"></div>
+  </div>
+
+  <!-- PILLAR 3: THEMES -->
+  <div class="card" style="margin-top:16px">
+    <h2>Опора 3 · Темы экзамена <span class="agg" id="tAgg">—</span></h2>
+    <div id="themes"></div>
+  </div>
+
+  <!-- DELTA -->
+  <div class="card" style="margin-top:16px">
+    <h2>Динамика прогресса</h2>
+    <div class="delta-cols">
+      <div>
+        <div class="delta-sum" id="todaySum"></div>
+        <div id="todayDelta"></div>
+      </div>
+      <div>
+        <div class="delta-sum" id="weekSum"></div>
+        <div id="weekDelta"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>YKI Svenska · личный трекер · данные обновляются после каждой сессии</footer>
 </div>
 
 <script src="data.js"></script>
 <script>
 const D = window.DASHBOARD;
-const STATUS={new:"не начато",learn:"изучаю",review:"повторяю",master:"освоено"};
 const $=s=>document.querySelector(s);
-const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const avg=a=>a.length?Math.round(a.reduce((s,x)=>s+x.pct,0)/a.length):0;
+const fmt=n=>n+"%";
+const plural=(n,o,f,m)=>{const a=Math.abs(n)%100,l=a%10;return l===1&&a!==11?o:(l>=2&&l<=4&&(a<10||a>=20))?f:m;};
 
 $("#upd").textContent="обновлено: "+D.updated;
-$("#lvlNum").textContent=D.level.current.toFixed(1);
-$("#ring").style.setProperty("--pct",(D.level.current/4*100)+"%");
-(function(){
-  const dEl=$("#lvlDelta");
-  if(D.level.delta>0){dEl.className="delta up";dEl.innerHTML="▲ +"+D.level.delta.toFixed(1)+"<small>за последний месяц</small>";}
-  else{dEl.className="delta zero";dEl.innerHTML="—<small>появится после 1-й сессии</small>";}
-})();
-$("#streakNum").innerHTML=D.streak.days+" <span>дней подряд</span>";
+$("#streakNum").innerHTML=D.streak.days+" <span>"+plural(D.streak.days,"день","дня","дней")+" подряд</span>";
 $("#week").innerHTML=D.streak.week.map(d=>`<i class="${d?'on':''}"></i>`).join("");
-$("#ready").textContent=`${D.readiness.phase} · ${D.readiness.done} / ~${D.readiness.total}`;
 
-function chips(arr,barId,countId,wrapId){
-  const started=arr.filter(x=>x.s!=="new").length;
-  $("#"+countId).textContent=`${started} / ${arr.length}`;
-  $("#"+barId).style.width=(started/arr.length*100)+"%";
-  const wrap=$("#"+wrapId); wrap.innerHTML="";
-  arr.forEach(x=>{
-    const c=el("div","chip s-"+x.s,`<span class="d"></span>${x.n}`);
-    c.title=STATUS[x.s]; wrap.appendChild(c);
-  });
+const gAvg=avg(D.grammar), cAvg=avg(D.constructions), tAvg=avg(D.themes);
+const overall=Math.round((gAvg+cAvg+tAvg)/3);
+$("#readyBig").innerHTML=overall+"<small>%</small>";
+$("#readyPct").textContent=fmt(overall);
+$("#gAgg").textContent=fmt(gAvg);
+$("#cAgg").textContent=fmt(cAvg);
+$("#tAgg").textContent=fmt(tAvg);
+
+const pillars=[
+  {name:"Грамматика", pct:gAvg},
+  {name:"Конструкции", pct:cAvg},
+  {name:"Темы экзамена", pct:tAvg}
+];
+$("#pillars").innerHTML=pillars.map(p=>
+  `<div class="pillar"><span class="name">${p.name}</span>
+   <span class="trk"><i style="width:${p.pct}%"></i></span>
+   <span class="pc">${fmt(p.pct)}</span></div>`).join("");
+
+function renderBars(list,id){
+  const wrap=$("#"+id);
+  wrap.innerHTML=list.map(x=>{
+    const cls=x.pct===0?"bar zero":"bar";
+    let a="flat", ac="flat";
+    if(x.d>0){a="▲";ac="up";} else if(x.d<0){a="▼";ac="down";}
+    return `<div class="${cls}"><span class="name">${x.n}</span>
+      <span class="arrow ${ac}">${a}</span>
+      <span class="trk"><i style="width:${x.pct}%"></i></span>
+      <span class="pc">${fmt(x.pct)}</span></div>`;
+  }).join("");
 }
-chips(D.themes,"thBar","thCount","themes");
-chips(D.functions,"fnBar","fnCount","functions");
+renderBars(D.grammar,"grammar");
+renderBars(D.constructions,"constructions");
+renderBars(D.themes,"themes");
 
-const ewrap=$("#errors");
-if(!D.errors.length){
-  ewrap.innerHTML='<div class="empty">Появится после первых сессий</div>';
-  $("#errSum").innerHTML="";
-}else{
-  ewrap.innerHTML="";
-  D.errors.forEach(e=>{
-    const row=el("div","err");
-    row.innerHTML=`<div class="top"><span>${e.t}</span><span class="delta">${e.before}% → ${e.now}% ▼</span></div>
-      <div class="track" style="--b:${e.before}%;--n:${e.now}%"><div class="before"></div><div class="now"></div></div>`;
-    ewrap.appendChild(row);
-  });
-  $("#errSum").innerHTML=`Исправлено всего: <b>${D.corrected}</b> · «закрыто» (3× верно): <b>${D.fixed}</b>`;
+// milestones
+$("#ms").innerHTML=D.milestones.map(m=>
+  `<li class="${m.done?'done':''}"><span class="box"></span><span>${m.t}</span></li>`).join("");
+
+// delta
+function renderDelta(field, sumId, listId, title){
+  const all=[...D.grammar,...D.constructions,...D.themes];
+  const movers=all.filter(x=>x[field]!==0).sort((a,b)=>Math.abs(b[field])-Math.abs(a[field]));
+  const up=movers.filter(x=>x[field]>0).length;
+  const down=movers.filter(x=>x[field]<0).length;
+  $("#"+sumId).innerHTML=`<b>${title}:</b> `
+    + (up?`<span class="up">+${up} продвинулось</span>`:`<span class="up">нет улучшений</span>`)
+    + (down?` · <span class="down">−${down} регрессий</span>`:"");
+  $("#"+listId).innerHTML = movers.length
+    ? movers.map(x=>{
+        const cls=x[field]>0?"up":"down", sign=x[field]>0?"+":"";
+        return `<div class="drow"><span class="nm">${x.n}</span><span class="mv ${cls}">${sign}${x[field]}%</span></div>`;
+      }).join("")
+    : `<div class="empty">пока нет изменений</div>`;
 }
-
-const wrap=$("#ms");
-D.milestones.forEach(m=>{
-  const li=el("li",m.done?"done":"");
-  li.innerHTML=`<span class="box"></span><span>${m.t}</span>`;
-  wrap.appendChild(li);
-});
-
-(function(){
-  const h=D.level.history, s=$("#spark");
-  if(h.length<2){
-    s.innerHTML=`<text x="160" y="48" text-anchor="middle" fill="#6c7891" font-size="12">после 1-й сессии появится график</text>`;
-    return;
-  }
-  const w=320,H=90,pad=8;
-  const mn=Math.min(...h),mx=Math.max(...h),r=(mx-mn)||1;
-  const sx=w/(h.length-1);
-  const pts=h.map((v,i)=>[i*sx, H-pad-((v-mn)/r)*(H-pad*2)]);
-  const d=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");
-  const area=`${d} L ${w} ${H} L 0 ${H} Z`;
-  s.innerHTML=`
-    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2f7fd4" stop-opacity=".25"/><stop offset="1" stop-color="#2f7fd4" stop-opacity="0"/>
-    </linearGradient></defs>
-    <path d="${area}" fill="url(#g)"/>
-    <path d="${d}" fill="none" stroke="#0f63b8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    ${pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="2.6" fill="#fff" stroke="#0f63b8" stroke-width="1.8"/>`).join("")}`;
-  $("#trendTxt").textContent=`${h[0].toFixed(1)} → ${h[h.length-1].toFixed(1)}  ·  по сессиям`;
-})();
+renderDelta("d","todaySum","todayDelta","Сегодня");
+renderDelta("w","weekSum","weekDelta","За неделю");
 </script>
 </body>
 </html>
