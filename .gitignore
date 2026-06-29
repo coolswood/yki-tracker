@@ -6,7 +6,10 @@
 ._*
 
 # Custom folder icons
-Icon
+Icon
+
+# Playwright MCP debug artifacts
+.playwright-mcp/
 
 # Volume root files
 .DocumentRevisions-V100
