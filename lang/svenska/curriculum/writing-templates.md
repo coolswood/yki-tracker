@@ -53,6 +53,7 @@ Hälsningar, [namn]
 ## Полезные «клеящие» фразы (связность)
 - *Först och främst ...* ↔EN "First of all..."
 - *Dessutom ...* ↔EN "Besides / In addition..."
+- *Istället ...* ↔EN "Instead..."
 - *Å ena sidan ... å andra sidan ...* ↔EN "On one hand ... on the other hand..."
 - *Sammanfattningsvis ...* ↔EN "In summary..."
 - *Till exempel ...* ↔EN "For example..."
